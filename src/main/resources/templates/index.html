@@ -11,8 +11,18 @@
 </head>
 <body>
 
+<h1>Student list</h1>
+<div th:each="student : ${students}">
+    <h2 th:text="${student.name}"></h2>
+    <h6 th:inline="text">majoring in [[${student.major}]]</h6>
+    <ul>
+        <th:block th:each="test: ${student.testScores}">
+            <li th:inline="text">[[${student.name}]] got a <strong>[[${test.score}]]</strong> in [[${test.subject}]].</li>
+        </th:block>
 
+    </ul>
 
+</div>
 
 
 <!-- Optional JavaScript -->
