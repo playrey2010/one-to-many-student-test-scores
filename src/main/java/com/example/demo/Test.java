@@ -11,6 +11,7 @@ public class Test {
     private String date;
     private int score;
     @ManyToOne
+    @JoinColumn(name = "student_id")
     private Student student;
 
     public long getTestid() {
